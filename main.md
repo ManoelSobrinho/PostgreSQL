@@ -285,12 +285,8 @@ Notemos que o campo disponivel na tabela livros já foi alterado para false e du
 </p>
 
 <p align="left">
-<img src="https://github.com/user-attachments/assets/d0c1586d-0961-47b6-b4a0-afe866b89cd9">
+<img src="https://github.com/user-attachments/assets/95682c80-8fbd-44e2-bc1d-11e326b8b4d0">
 </p>
-
-
-
-
 
 
 
