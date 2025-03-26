@@ -209,7 +209,21 @@ GRANT INSERT, UPDATE, DELETE ON livros TO bibliotecario;
 
 # Na prática
 
+## Criando usuários e livros
+
+Alguns usuários e livros foram adicionados para verificar exemplos práticos.
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/25ae9ffa-bbb5-4828-8959-099cdf970fc8">
+</p>
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/8fa58c8d-8f5a-47ca-928f-62295572a8c8">
+</p>
+
 ## Empréstimo de livro
+
+### Emprestando um livro com id=1 ao usuário de id=1
 
 ```PGSQL
 SELECT emprestar_livro(1, 1);
