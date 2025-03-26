@@ -15,3 +15,9 @@ Esse projeto envolve a criação de um banco de dados para gerenciar uma bibliot
 ```PGSQL
 CREATE DATABASE biblioteca;
 ```
+
+## Acesso pelo terminal
+
+```
+psql -U postgres -d biblioteca
+```
