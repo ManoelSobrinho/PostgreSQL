@@ -129,7 +129,7 @@ $$ LANGUAGE plpgsql;
 
 Esta função irá fazer com que um livro que está emprestado seja devolvido e altere o status do mesmo tanto na tabela emprestimos como na tabela livros.
 
-Exemplo: Devolução do empréstimo que tem o id = 1:
+Exemplo: Devolução do empréstimo que tem o id=1:
 
 ```PGSQL
 SELECT devolver_livro(1);
