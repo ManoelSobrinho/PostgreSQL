@@ -88,7 +88,7 @@ CREATE INDEX idx_emprestimos_status ON emprestimos(status);
 
 ### Explicação
 
-Algumas buscas comuns serão melhoradas, nesse caso, buscas pelo e-mail do usuário que foi cadastrado, buscas pelo título do livro e também pelo status do empréstimo.
+Algumas buscas comuns serão melhoradas, nesse caso, buscas pelo e-mail do usuário que foi cadastrado, pelo título do livro e também pelo status do empréstimo.
 
 # Passo 4: Criação de Views para Consultas Rápidas
 
