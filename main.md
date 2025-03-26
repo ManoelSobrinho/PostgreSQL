@@ -213,11 +213,11 @@ GRANT INSERT, UPDATE, DELETE ON livros TO bibliotecario;
 
 Alguns usuários e livros foram adicionados para verificar exemplos práticos.
 
-<p align="center">
+<p align="left">
 <img src="https://github.com/user-attachments/assets/25ae9ffa-bbb5-4828-8959-099cdf970fc8">
 </p>
 
-<p align="center">
+<p align="left">
 <img src="https://github.com/user-attachments/assets/8fa58c8d-8f5a-47ca-928f-62295572a8c8">
 </p>
 
@@ -229,7 +229,7 @@ Alguns usuários e livros foram adicionados para verificar exemplos práticos.
 SELECT emprestar_livro(1, 1);
 ```
 
-<p align="center">
+<p align="left">
 <img src="https://github.com/user-attachments/assets/9d98f7ad-2144-4cf8-bc89-00efc114e060">
 </p>
 
@@ -239,10 +239,53 @@ SELECT emprestar_livro(1, 1);
 <img src="https://github.com/user-attachments/assets/46d84d88-9784-437c-9eef-fff1eb6519e7">
 </p>
 
-Não irá funcionar pois o livro já está emprestado. É possível ver na tabela que o campo disponivel foi atualizado pela trigger
+Não irá funcionar pois o livro já está emprestado. É possível ver na tabela que o campo disponivel foi atualizado pela trigger.
 
 <p align="left">
 <img src="https://github.com/user-attachments/assets/b2fd1406-4472-4def-97cc-6dcc41022559">
+</p>
+
+## Devolução de um livro
+
+Vamos devolver o livro de id=1 que está emprestado ao usuário de id=1
+
+```PGSQL
+SELECT devolver_livro(1)
+```
+
+Com isso, podemos ver que, ao consultar as tabelas livros e emprestimos os campos referentes ao status do livro forama alterados e o livro pode ser emprestado novamente.
+
+<p align="left">
+<img src="https://github.com/user-attachments/assets/a55a2f2e-88ee-4dd6-9a3b-2ef84deee875">
+</p>
+
+<p align="left">
+<img src="https://github.com/user-attachments/assets/ac9a467d-8625-420a-90b5-e20ddeb98507">
+</p>
+
+## O que acontece se um livro que está emprestado ou um usuário que tem um empréstimo ativo são excluídos?
+
+Como teste emprestei fiz os seguintes empréstimos:
+
+Livro com id=2 foi emprestado ao usuário de id=2;
+
+Livro com id=3 foi emprestado ao usuário de id=3;
+
+Com os seguintes comandos:
+
+```PGSQL
+SELECT emprestar_livro(2, 2);
+SELECT emprestar_livro(3, 3);
+```
+
+Notemos que o campo disponivel na tabela livros já foi alterado para false e duas novas linhas apareceram na tabela emprestimos
+
+<p align="left">
+<img src="https://github.com/user-attachments/assets/eb384ea8-9fe1-4405-b55e-baf500a21251">
+</p>
+
+<p align="left">
+<img src="https://github.com/user-attachments/assets/d0c1586d-0961-47b6-b4a0-afe866b89cd9">
 </p>
 
 
