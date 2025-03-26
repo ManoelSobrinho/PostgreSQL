@@ -288,8 +288,41 @@ Notemos que o campo disponivel na tabela livros já foi alterado para false e du
 <img src="https://github.com/user-attachments/assets/95682c80-8fbd-44e2-bc1d-11e326b8b4d0">
 </p>
 
+Agora vamos excluir o livro com id=2 e o usuário com id=3
 
+<p align="left">
+<img src="https://github.com/user-attachments/assets/8730f5f6-0564-499b-a769-a48ad2c7046a">
+</p>
 
+<p align="left">
+<img src="https://github.com/user-attachments/assets/a4a899dc-2ac7-490a-a2bf-92680eb55bf3">
+</p>
 
+Notemos que na tabela emprestimos os registros foram excluídos corretamente, porém na tabela livros o status disponível do livro cujo usuário que o tinha como empréstimo foi excluído está false.
 
+### Como corrigir esse caso fazendo com que quando um usuário que for excluído e tenha um livro emprestado o status do livro na tabela livros seja alterado fazendo com que o livro fique disonível novamente.
 
+Criando uma trigger que altere o campo na tabela livros sempre que um empréstimo for excluído.
+
+```PGSQL
+CREATE OR REPLACE FUNCTION atualizar_status_livro()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- Atualiza o status do livro para disponível ao excluir um empréstimo
+    UPDATE livros
+    SET disponivel = TRUE
+    WHERE id = OLD.livro_id;
+
+    RETURN OLD;
+END;
+$$ LANGUAGE plpgsql;
+```
+
+```PGSQL
+CREATE TRIGGER trg_atualizar_livro_disponivel
+AFTER DELETE ON emprestimos
+FOR EACH ROW
+EXECUTE FUNCTION atualizar_status_livro();
+```
+
+Agora sempre que um usuário que tem um livro emprestado for excluído, o status do livro será alterado para disponível.
