@@ -1,8 +1,0 @@
-### Projeto: Sistema de Gerenciamento de Biblioteca no PostgreSQL
-
-Esse projeto envolve a criação de um banco de dados para gerenciar uma biblioteca, incluindo livros, usuários, empréstimos e devoluções.
-
-```TSQL
-SELECT [name], is_cdc_enabled 
-FROM sys.databases
-```
