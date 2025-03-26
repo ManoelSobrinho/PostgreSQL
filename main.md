@@ -235,13 +235,13 @@ SELECT emprestar_livro(1, 1);
 
 ### Emprestando o livro de id=1 que já está emprestado a outro usuário
 
-<p align="center">
+<p align="left">
 <img src="https://github.com/user-attachments/assets/46d84d88-9784-437c-9eef-fff1eb6519e7">
 </p>
 
 Não irá funcionar pois o livro já está emprestado. É possível ver na tabela que o campo disponivel foi atualizado pela trigger
 
-<p align="center">
+<p align="left">
 <img src="https://github.com/user-attachments/assets/b2fd1406-4472-4def-97cc-6dcc41022559">
 </p>
 
