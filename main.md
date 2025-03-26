@@ -2,7 +2,7 @@
 
 Esse projeto envolve a criação de um banco de dados para gerenciar uma biblioteca, incluindo livros, usuários, empréstimos e devoluções.
 
-Tecnologias:
+### Tecnologias:
 
 ✅ PostgreSQL rodando em Linux ou Windows
 
@@ -10,5 +10,8 @@ Tecnologias:
 
 ✅ Controle de permissões e autenticação
 
+## Passo 1: Criar o Banco de Dados
 
-
+```PGSQL
+CREATE DATABASE biblioteca;
+```
